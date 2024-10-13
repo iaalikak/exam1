@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam 1</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+		   
+		   
+<style type="text/css">
+  html, body { margin: 0; padding: 0; height: 100%; }
+  #map { min-height: 100%; }
+</style>
+
+    </head>
+
+    <body>
+	
+		<h1> Welcome to G&ES at NEIU!</h1>
+        <div id="map"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.9800463,-87.7182379],
+              zoom: 17
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 18,
+               minZoom: 4
+            }).addTo(map);
+			
+          var marker1 = L.marker([41.9818174,-87.7180036]).addTo(map);
+          var marker2 = L.marker([41.9803809,-87.716918]).addTo(map);
+		  var marker3 = L.marker([41.980329,-87.7191778]).addTo(map);
+		  var marker4 = L.marker([41.981051,-87.7174014]).addTo(map);
+		  var marker5 = L.marker([41.9805526,-87.7203543]).addTo(map);		  
+		  
+          marker1.bindPopup('<p style="color:DodgerBlue; font-weight:bold"> Stop in the Financial Aid Office in room D 200 to confirm all of your aid awards are correct once a semester.</p>');
+          marker2.bindPopup('<p style="color:DodgerBlue; font-weight:bold"> Find the G&ES department, faculty offices, classes, and labs in the BBH.</p>');
+		  marker3.bindPopup('<p style="color:DodgerBlue; font-weight:bold"> Visit the main library to meet with G&ES lbrarian, Ed Remus, for help with research.</p>');
+          marker4.bindPopup('<p style="color:DodgerBlue; font-weight:bold"> The McNair Scholars program in B 141 can offer incredible support for preparation and applications to graduate programs.</p>');		  
+		  marker5.bindPopup('<p style="color:DodgerBlue; font-weight:bold"> Submit your parking form in PF 125 each semester to use designated student parking zones called Blue Level parking.</p>');		  
+        </script>
+   </body>
+</html>
